@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use OpusVL::WebsiteAdmin::Builder;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 my $builder = OpusVL::WebsiteAdmin::Builder->new(
     appname => __PACKAGE__,
