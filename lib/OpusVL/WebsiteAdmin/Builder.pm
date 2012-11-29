@@ -11,11 +11,12 @@ override _build_superclasses => sub
 override _build_plugins => sub {
     my $plugins = super(); # Get what CatalystX::AppBuilder gives you
 
-    push @$plugins, qw(
+    my @filtered = grep { !/FastMmap/ } @$plugins;
+    push @filtered, qw(
         +OpusVL::AppKitX::CMS
     );
 
-    return $plugins;
+    return \@filtered;
 };
 
 override _build_config => sub {
