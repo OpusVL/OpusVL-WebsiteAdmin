@@ -14,6 +14,7 @@ override _build_plugins => sub {
     my @filtered = grep { !/FastMmap/ } @$plugins;
     push @filtered, qw(
         +OpusVL::AppKitX::CMS
+        Session::Store::Cache
     );
 
     return \@filtered;
