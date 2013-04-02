@@ -42,7 +42,7 @@ override _build_config => sub {
     $config->{'appkit_can_access_actionpaths'} = ['custom/custom'];
 
     # DEBUGIN!!!!
-    $config->{'appkit_can_access_everything'} = 1;
+    #$config->{'appkit_can_access_everything'} = 1;
     
     $config->{application_name} = 'AppKit TestApp';
     $config->{default_view}     = 'AppKitTT';
