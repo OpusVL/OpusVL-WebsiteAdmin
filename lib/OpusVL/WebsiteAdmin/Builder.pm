@@ -51,3 +51,22 @@ override _build_config => sub {
 };
 
 1;
+
+=head1 NAME
+
+OpusVL::WebsiteAdmin::Builder
+
+=head1 DESCRIPTION
+
+=head1 METHODS
+
+=head1 ATTRIBUTES
+
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2015 OpusVL.
+
+This software is licensed according to the "IP Assignment Schedule" provided with the development project.
+
+=cut
