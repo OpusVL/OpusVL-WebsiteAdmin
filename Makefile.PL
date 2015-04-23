@@ -22,6 +22,7 @@ requires 'Config::General'; # This should reflect the config file format you've 
 
 requires 'OpusVL::AppKit';
 requires 'OpusVL::AppKitX::CMS';
+requires 'OpusVL::Website';
 
 test_requires 'Test::More' => '0.88';
 catalyst;
