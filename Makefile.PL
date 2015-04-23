@@ -28,4 +28,11 @@ catalyst;
 
 install_script glob('script/*.pl');
 auto_install;
+resources (
+    repository => {
+        url => 'ssh://git/srv/git/OpusVL-WebsiteAdmin',
+        type => 'git',
+    },
+);
+
 WriteAll;
