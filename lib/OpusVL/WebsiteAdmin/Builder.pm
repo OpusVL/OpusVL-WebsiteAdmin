@@ -29,13 +29,13 @@ override _build_config => sub {
     {
         schema_class => 'OpusVL::AppKit::Schema::AppKitAuthDB',
         connect_info => [
-          'dbi:SQLite:' . OpusVL::WebsiteAdmin->path_to('root','appkit-auth.db'),
+            'dbi:SQLite:' . $self->appname->path_to('root','appkit-auth.db'),
         ],
     };
 
     # .. add static dir into the config for Static::Simple..
     my $static_dirs = $config->{static}->{include_path};
-    unshift(@$static_dirs, OpusVL::WebsiteAdmin->path_to('root'));
+    unshift(@$static_dirs, $self->appname->path_to('root'));
     $config->{static}->{include_path} = $static_dirs;
     
     # .. allow access regardless of ACL rules...
@@ -45,6 +45,7 @@ override _build_config => sub {
     #$config->{'appkit_can_access_everything'} = 1;
     
     $config->{application_name} = 'AppKit TestApp';
+    $config->{application_style} = 1;
     $config->{default_view}     = 'AppKitTT';
     
     return $config;
