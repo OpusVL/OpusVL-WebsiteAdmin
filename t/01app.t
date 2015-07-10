@@ -3,8 +3,8 @@ use strict;
 use warnings;
 use Test::More;
 
-use Catalyst::Test 'OpusVL::Website';
+use Catalyst::Test 'OpusVL::WebsiteAdmin';
 
-ok( request('/')->is_success, 'Request should succeed' );
+ok( request('/login')->is_success, 'Request should succeed' );
 
 done_testing();
