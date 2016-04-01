@@ -8,6 +8,7 @@ use Module::Install::Catalyst; # Complain loudly if you don't have
 
 name 'OpusVL-WebsiteAdmin';
 all_from 'lib/OpusVL/WebsiteAdmin.pm';
+license 'perl';
 
 requires 'OpusVL::Website';
 requires 'Catalyst::Runtime' => '5.90002';
