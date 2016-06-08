@@ -24,6 +24,10 @@ if (@site > 1) {
 
 my $site = $site[0];
 
+CHDIR: {
+    use autodie;
+    chdir($options->{chdir}) if $options->{chdir};
+}
 
 my $append_html = sub { shift . '.html' };
 dump_rs(recordset => scalar $site->elements, outdir => 'elements', alterslug => $append_html);
@@ -67,6 +71,7 @@ sub get_options {
         'h|help'    =>  \$options->{help},
         'man'       =>  \$options->{man},
         'site|s=s'  =>  \$options->{site},
+        'chdir|C=s' =>  \$options->{chdir},
     );
 
     pod2usage(-exitval => 2) unless $parsed_ok;
@@ -97,6 +102,7 @@ opusvl_websiteadmin_dump_site.pl [options] -s I<site>
     -h, --help              brief help message
     --man                   full documentation
     --site site, -s site    specify the site name (required)
+    --chdir dir, -C dir     change directory to dir before dumping files
 
 =head1 OPTIONS
 
